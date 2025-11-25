@@ -89,7 +89,7 @@ const Dock = () => {
                 </div>
             ))}
 
-            <Tooltip id="dock-tooltip" place="top" className='tooptip' />
+            <Tooltip id="dock-tooltip" place="top" className='tooltip' />
         </div>
     </section>
   )
