@@ -35,7 +35,13 @@ const WindowWrapper = (Component, windowKey) => {
           if (!el) return;
           el.style.display = isOpen ? 'block' : 'none'}, [isOpen]);
 
-        return ( <section id={windowKey} ref={ref} style={{ zIndex }} className='absolute' >
+        return ( 
+        <section 
+            id={windowKey} 
+            ref={ref} 
+            style={{ zIndex }} 
+            className='absolute' 
+        >
             <Component {...props} />
             </section>
         )
@@ -46,4 +52,4 @@ const WindowWrapper = (Component, windowKey) => {
   return Wrapped;
 }
 
-export default WindowWrapper
+export default WindowWrapper;

@@ -16,9 +16,12 @@ const Dock = () => {
         const icons = dock.querySelectorAll(".dock-icon");
 
         const animateIcons = (mouseX) => {
-            icons.forEach((icon) => {
-                const { left, width } = icon.getBoundingClientRect();
-                const center = left + width / 2;
+                const { left } = dock.getBoundingClientRect();
+
+                icons.forEach((icon) => {
+                const {left: iconLeft, width} = 
+                icon.getBoundingClientRect();
+                const center = iconLeft - left + width / 2;
                 const distance = Math.abs(mouseX - center);
 
                 const intensity = Math.exp(-(distance ** 2.5) / 20000);
@@ -29,21 +32,27 @@ const Dock = () => {
                     duration: 0.2,
                     ease: "power1.out"
                 })
-            })
+             })
+            }
+        
+
+        const handleMouseMove = (e) => {
+            const { left } = dock.getBoundingClientRect();
+            animateIcons(e.clientX - left);
         }
 
-        const handleMouseMove = (e) => animateIcons(e.clientX);
-
-        const resetIcons = () => {
-            icons.forEach((icon) => {
+        const resetIcons = () => 
+            icons.forEach((icon) => 
                 gsap.to(icon, {
                     scale: 1,
                     y: 0,
                     duration: 0.3,
                     ease: "power1.out",
                 })
-            })
-        }
+            )
+        
+        
+        
         
         dock.addEventListener('mousemove', handleMouseMove);
         dock.addEventListener('mouseleave', resetIcons);
@@ -52,7 +61,7 @@ const Dock = () => {
             dock.removeEventListener('mousemove', handleMouseMove);
             dock.removeEventListener('mouseleave', resetIcons);
         }
-    }, [])
+    }, []);
 
    
 
@@ -62,11 +71,11 @@ const Dock = () => {
         const window = windows[app.id];
 
         if(!window){
-            console.error (`Window not found for app: ${app.id}`);
+            console.error(`Window not found for app: ${app.id}`);
             return;
         }
 
-        if(window.isOpen) {
+        if (window.isOpen) {
             closeWindow(app.id);
         } else {
             openWindow(app.id);
