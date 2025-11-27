@@ -4,12 +4,24 @@ import { clsx } from "clsx"
 import { Search } from "lucide-react"
 import { locations } from "#constants"
 import useLocationStore from "#store/location"
+import useWindowStore from "#store/window"
 
 const Finder = () => {
+    const { openWindow } = useWindowStore();
     const {activeLocation, setActiveLocation} = useLocationStore();
 
-    const openItem = (item) => {}
-    
+    const openItem = (item) => {
+        if (item.fileType === "pdf") return openWindow("resume");
+        if (item.kind === "folder") return setActiveLocation(item);
+        if (["fig", "url"].includes(item.fileType) && item.href)
+            return window.open(item.href, "_blank");
+
+        if (!item.fileType || !item.kind) {
+            console.warn("Item missing fileType or kind:", item);
+            return;
+        }
+        openWindow(`${item.fileType}${item.kind}`, item);
+    };    
     const renderList = (name, items) => (
         <div>
             <h3>{name}</h3>
