@@ -38,7 +38,7 @@ const Finder = () => {
                 <p className="text-sm font-medium truncate">
                 {item.name}</p>
                 </li>
-            ))};
+            ))}
             </ul>
         </div>
     )
