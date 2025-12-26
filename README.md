@@ -1,16 +1,84 @@
-# React + Vite
+# 🎨 Ayush's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, interactive portfolio website showcasing my projects and skills with a beautiful gradient UI design.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./assets/portfolio-preview.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## React Compiler
+- **Modern UI/UX**: Clean and professional design with stunning gradient backgrounds
+- **Project Showcase**: Display of featured projects including: 
+  - Nike Ecommerce Website Application
+  - AI Resume Analyzer
+  - Food Delivery App
+- **Interactive Navigation**: Easy-to-use navigation menu with sections for Projects, Contact, and Resume
+- **Responsive Design**: Optimized for all device sizes
+- **Smooth Animations**: Engaging user experience with smooth transitions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Tech Stack
 
-## Expanding the ESLint configuration
+- **JavaScript** (81.2%)
+- **CSS** (18%)
+- **HTML** (0.8%)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Getting Started
+
+### Prerequisites
+
+- A modern web browser
+- Basic knowledge of HTML, CSS, and JavaScript (for customization)
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/AyushGupta2526/Portfolio.git
+```
+
+2. Navigate to the project directory
+```bash
+cd Portfolio
+```
+
+3. Open `index.html` in your browser or use a local server
+```bash
+# Using Python
+python -m http.server 8000
+
+# Using Node.js
+npx serve
+```
+
+## 📂 Project Structure
+
+```
+Portfolio/
+├── index.html          # Main HTML file
+├── css/               # Stylesheets
+├── js/                # JavaScript files
+└── assets/            # Images and other assets
+```
+
+## 🎯 Featured Projects
+
+1. **Nike Ecommerce Website Application** - A full-featured ecommerce platform
+2. **AI Resume Analyzer** - Intelligent resume analysis tool
+3. **Food Delivery App** - Modern food ordering application
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check the issues page. 
+
+## 📧 Contact
+
+Ayush Gupta - [@AyushGupta2526](https://github.com/AyushGupta2526)
+
+Project Link: [https://github.com/AyushGupta2526/Portfolio](https://github.com/AyushGupta2526/Portfolio)
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+⭐ Star this repo if you like it!
