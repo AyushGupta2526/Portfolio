@@ -1,12 +1,14 @@
-import { dockApps } from '#constants';
+import { dockApps, locations } from '#constants';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react'
 import gsap from 'gsap';
 import { Tooltip } from 'react-tooltip';
 import useWindowStore from '#store/window';
+import useLocationStore from '#store/location';
 
 const Dock = () => {
     const{ openWindow, closeWindow, windows } = useWindowStore();
+    const { setActiveLocation } = useLocationStore();
     const dockRef = useRef(null);
 
     useGSAP(() => {
@@ -67,6 +69,18 @@ const Dock = () => {
 
     const toggleApp = (app) => {
         if(!app.canOpen) return;
+
+        // Special handling for trash - open finder with trash location
+        if (app.id === 'trash') {
+            const finderWindow = windows['finder'];
+            if (finderWindow?.isOpen) {
+                closeWindow('finder');
+            } else {
+                setActiveLocation(locations.trash);
+                openWindow('finder');
+            }
+            return;
+        }
 
         const window = windows[app.id];
 
